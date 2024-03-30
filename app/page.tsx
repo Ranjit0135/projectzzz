@@ -1,37 +1,7 @@
 // import { url } from "inspector";
-// import { useEffect, useRef } from "react";
+"use client";
 
 export default function Home() {
-  // const carouselRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const carousel = carouselRef.current;
-  //   if (!carousel) return;
-  //   let currentPosition = 0;
-
-  //   const slide = () => {
-  //     currentPosition -= 1;
-  //     carousel.style.transform = `translateX(${currentPosition}px)`;
-
-  //     if (
-  //       Math.abs(currentPosition) >=
-  //       carousel.scrollWidth - carousel.clientWidth
-  //     ) {
-  //       currentPosition = 0;
-  //       carousel.style.transition = "none";
-  //       carousel.style.transform = `translateX(${currentPosition}px)`;
-  //       setTimeout(() => {
-  //         carousel.style.transition = "transform 0.5s ease";
-  //       }, 50);
-  //     }
-  //   };
-
-  //   const interval = setInterval(slide, 3000); // Adjust interval time as per your preference
-
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
   return (
     // <div className="flex justify-center items-center h-screen ">
     //   <div
@@ -90,8 +60,8 @@ export default function Home() {
     //       </div>
     //     </nav>
 
-    //     <section className="relative grid grid-cols-3 gap-10 items-center justify-center h-[60vh] m-5">
-    //       <div ref={carouselRef} className="flex justify-center flex-col">
+    //     <section className="relative grid grid-cols-3 gap-10 items-center justify-center h-[60vh] m-5 overflow-x-hidden">
+    //       <div className="flex justify-center flex-col">
     //         <img src="/plant1.png" alt="" className="max-w-full max-h-60 " />
     //         <span className=" text-center">Pot1</span>
     //         <label className=" text-center font-semibold">$200</label>
@@ -100,6 +70,31 @@ export default function Home() {
     //         <img src="/plant5.png" alt="" className="max-w-full max-h-60" />
     //         <span className=" text-center">Pot2</span>
     //         <label className=" text-center font-semibold">$250</label>
+    //       </div>
+    //       <div className="flex justify-center flex-col">
+    //         <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
+    //         <span className=" text-center">Pot3</span>
+    //         <label className=" text-center font-semibold">$300</label>
+    //       </div>
+    //       <div className="flex justify-center flex-col">
+    //         <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
+    //         <span className=" text-center">Pot3</span>
+    //         <label className=" text-center font-semibold">$300</label>
+    //       </div>
+    //       <div className="flex justify-center flex-col">
+    //         <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
+    //         <span className=" text-center">Pot3</span>
+    //         <label className=" text-center font-semibold">$300</label>
+    //       </div>
+    //       <div className="flex justify-center flex-col">
+    //         <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
+    //         <span className=" text-center">Pot3</span>
+    //         <label className=" text-center font-semibold">$300</label>
+    //       </div>
+    //       <div className="flex justify-center flex-col">
+    //         <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
+    //         <span className=" text-center">Pot3</span>
+    //         <label className=" text-center font-semibold">$300</label>
     //       </div>
     //       <div className="flex justify-center flex-col">
     //         <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
@@ -141,8 +136,6 @@ export default function Home() {
     //     </div>
     //   </div>
     // </div>
-    <>
-      <div>sjdfk</div>
-    </>
+    <></>
   );
 }

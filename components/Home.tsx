@@ -1,36 +1,6 @@
+import { Carousel } from "flowbite-react";
 import React from "react";
-import { useEffect, useRef } from "react";
 const Home = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-    let currentPosition = 0;
-
-    const slide = () => {
-      currentPosition -= 1;
-      carousel.style.transform = `translateX(${currentPosition}px)`;
-
-      if (
-        Math.abs(currentPosition) >=
-        carousel.scrollWidth - carousel.clientWidth
-      ) {
-        currentPosition = 0;
-        carousel.style.transition = "none";
-        carousel.style.transform = `translateX(${currentPosition}px)`;
-        setTimeout(() => {
-          carousel.style.transition = "transform 0.5s ease";
-        }, 50);
-      }
-    };
-
-    const interval = setInterval(slide, 3000); // Adjust interval time as per your preference
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
   return (
     <div className="flex justify-center items-center h-screen ">
       <div
@@ -89,24 +59,28 @@ const Home = () => {
           </div>
         </nav>
 
-        <section className="relative grid grid-cols-3 gap-10 items-center justify-center h-[60vh] m-5">
-          <div ref={carouselRef} className="flex justify-center flex-col">
-            <img src="/plant1.png" alt="" className="max-w-full max-h-60 " />
-            <span className=" text-center">Pot1</span>
-            <label className=" text-center font-semibold">$200</label>
-          </div>
-          <div className="flex justify-center flex-col">
-            <img src="/plant5.png" alt="" className="max-w-full max-h-60" />
-            <span className=" text-center">Pot2</span>
-            <label className=" text-center font-semibold">$250</label>
-          </div>
-          <div className="flex justify-center flex-col">
-            <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
-            <span className=" text-center">Pot3</span>
-            <label className=" text-center font-semibold">$300</label>
-          </div>
-        </section>
+        <div className="h-96 flex align-middle justify-center items-center  ">
+          <Carousel className=" w-96 items-center justify-center align-middle   ">
+            <div className=" flex  justify-center flex-col">
+              <img src="/plant1.png" alt="" className="max-w-full max-h-60 " />
+              <span className=" text-center">Pot1</span>
+              <label className=" text-center font-semibold">$200</label>
+            </div>
+
+            <div className="flex justify-center flex-col">
+              <img src="/plant6.png" alt="" className="max-w-full max-h-60" />
+              <span className=" text-center">Pot3</span>
+              <label className=" text-center font-semibold">$300</label>
+            </div>
+            <div className="flex justify-center flex-col">
+              <img src="/plant6.png" alt="" className="max-w-full max-h-60 " />
+              <span className=" text-center">Pot3</span>
+              <label className=" text-center font-semibold">$300</label>
+            </div>
+          </Carousel>
+        </div>
       </div>
+      <div className="flex overflow-x-auto"></div>
       <div className="absolute bg-slate-300  flex bottom-20 gap-4 rounded-3xl items-center justify-around">
         <div className=" m-2 pl-5">
           <h1>Monstera Desjdvd</h1>
@@ -114,29 +88,6 @@ const Home = () => {
         </div>
         <div className="m-2 pr-5 bg-white rounded-xl">
           <button className="p-2">+AddToCart</button>
-          {/* {selector.some((x) => x.id === item.id) ? (
-                  <button
-                    onClick={() => removeItemFromCart(item)}
-                    style={{
-                      backgroundColor: "orangered",
-                      width: "100%",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Remove from Cart
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => addItemToCart(item)}
-                    style={{
-                      backgroundColor: "orangered",
-                      width: "100%",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                )} */}
         </div>
       </div>
     </div>
