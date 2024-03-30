@@ -28,7 +28,7 @@ const CartPage = () => {
               <span className="amount">{}</span>
             </td>
             <td className="product-quantity">
-              <input type="number" value={} />
+              <input type="number" />
             </td>
             <td className="product-subtotal">£{}</td>
             <td className="product-remove">
